@@ -24,6 +24,22 @@ bld/
 
 # Visual Studo 2015 cache/options directory
 .vs/
+*.sln.docstates
+
+# Xamarin Studio / monodevelop user-specific
+*.userprefs
+
+# Build results
+
+[Dd]ebug/
+[Rr]elease/
+x64/
+build/
+[Bb]in/
+[Oo]bj/
+
+# Enable "build/" folder in the NuGet Packages folder since NuGet packages use it for MSBuild targets
+!packages/*/build/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
@@ -41,6 +57,8 @@ dlldata.c
 *_i.c
 *_p.c
 *_i.h
+*_i.c
+*_p.c
 *.ilk
 *.meta
 *.obj
@@ -65,6 +83,9 @@ dlldata.c
 
 # Chutzpah Test files
 _Chutzpah*
+
+*.log
+*.scc
 
 # Visual C++ cache files
 ipch/
@@ -110,6 +131,9 @@ AutoTest.Net/
 # Web workbench (sass)
 .sass-cache/
 
+*.ncrunch*
+.*crunch*.local.xml
+
 # Installshield output folder
 [Ee]xpress/
 
@@ -145,6 +169,13 @@ publish/
 
 # Windows Azure Build Output
 csx/
+*.Publish.xml
+
+# Enable nuget.exe in the .nuget folder (though normally executables are not tracked)
+!.nuget/NuGet.exe
+
+# Windows Azure Build Output
+csx
 *.build.csdef
 
 # Windows Store app package directory
@@ -152,6 +183,8 @@ AppPackages/
 
 # Others
 *.[Cc]ache
+sql/
+*.Cache
 ClientBin/
 [Ss]tyle[Cc]op.*
 ~$*
@@ -162,6 +195,9 @@ ClientBin/
 *.publishsettings
 node_modules/
 bower_components/
+*.[Pp]ublish.xml
+*.pfx
+*.publishsettings
 
 # RIA/Silverlight projects
 Generated_Code/
@@ -169,6 +205,8 @@ Generated_Code/
 # Backup & report files from converting an old project file
 # to a newer Visual Studio version. Backup files are not needed,
 # because we have git ;-)
+# Backup & report files from converting an old project file to a newer
+# Visual Studio version. Backup files are not needed, because we have git ;-)
 _UpgradeReport_Files/
 Backup*/
 UpgradeLog*.XML
@@ -194,3 +232,54 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+App_Data/*.mdf
+App_Data/*.ldf
+
+
+#LightSwitch generated files
+GeneratedArtifacts/
+_Pvt_Extensions/
+ModelManifest.xml
+
+# =========================
+# Windows detritus
+# =========================
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Mac desktop service store files
+.DS_Store
+
+# ===================================================
+# Exclude F# project specific directories and files
+# ===================================================
+
+# NuGet Packages Directory
+packages/
+
+# Generated documentation folder
+docs/output/
+
+# Temp folder used for publishing docs
+temp/
+
+# Test results produced by build
+TestResults.xml
+
+# Nuget outputs
+nuget/*.nupkg
+.paket/paket.exe
+output
+paket-files
+release.cmd
+*.bak
+*.orig
+docs
