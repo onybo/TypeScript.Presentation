@@ -3,6 +3,7 @@
 - author : Olav Nybø
 - theme : sky
 - transition : default
+- license : http://creativecommons.org/licenses/by-sa/4.0/legalcode
 
 ***
 
