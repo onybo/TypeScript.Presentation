@@ -247,6 +247,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="apps\item\app\app.ts" />
+    <TypeScriptCompile Include="apps\item\app\BlinkDirective.ts" />
     <TypeScriptCompile Include="apps\item\app\PersonDialogController.ts" />
     <TypeScriptCompile Include="apps\item\app\ItemController.ts" />
     <TypeScriptCompile Include="Scripts\services\HotkeysService.ts" />
