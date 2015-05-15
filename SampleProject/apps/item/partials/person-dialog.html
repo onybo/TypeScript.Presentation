@@ -1,0 +1,47 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">Person</h3>
+</div>
+<div class="modal-body">
+    <div class="row ">
+        <div class="form-group col-xs-6">
+            <label>name</label>
+            <span class="form-control">{{ctl.vm.name}}</span>
+        </div>
+        <div class="form-group col-xs-3">
+            <label>Social security number</label>
+            <span class="form-control">{{ctl.vm.socialSecurityNumber}}</span>
+        </div>
+        <div class="form-group col-xs-3">
+            <label>Nationality</label>
+            <select ng-model="ctl.vm.nationality" class="form-control"
+                    ng-options=" nationality as nationality.key for nationality in ctl.countries track by nationality.value"></select>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="form-group col-xs-3">
+            <label>Occupation</label>
+            <input type="text" class="form-control" ng-model="ctl.vm.occupation" placeholder="Occupation"/>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="form-group col-xs-3">
+            <label>City</label>
+            <select ng-model="ctl.vm.city" class="form-control"
+                    ng-options=" city as city.key for city in ctl.cities track by city.value"></select>
+        </div>
+        <div class="form-group col-xs-3">
+            <label>Country</label>
+            <select ng-model="ctl.vm.country" class="form-control"
+                    ng-options=" country as country.key for country in ctl.countries track by country.value"></select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-12">
+            <label>Description</label>
+            <span class="form-control">{{ctl.vm.description}}</span>
+        </div>
+    </div>    
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ctl.save()">Ok</button>
+</div>

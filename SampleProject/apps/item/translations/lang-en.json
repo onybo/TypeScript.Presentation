@@ -1,0 +1,11 @@
+﻿{
+    "BASE": {
+        "CREATED":  "Created",
+        "CASE_NUMBER":  "Case number",
+        "LAST_SAVED":  "Last saved",
+        "SAVE": "Save"
+    },
+    "PERSON": { 
+        "EDIT":  "Edit person"
+    }
+}

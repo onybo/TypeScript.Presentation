@@ -1,0 +1,52 @@
+﻿@import "bootstrap/bootstrap.less";
+@import "variables.less";
+@import "hotkeys.less";
+
+.panel-default > .panel-heading {
+    color: black;
+    font-weight: bold;
+}
+
+span.form-control {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+.panel {
+    span.form-control {
+        background-color: @panel-bg;
+    }
+}
+
+.btn {
+    min-width: 111px;
+}
+
+.container {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.panel-footer {
+    background-color: inherit;
+}
+
+label {
+    margin-bottom: 0;
+}
+
+.form-control {
+    height: inherit;
+    padding: @padding-base-vertical 0;
+}
+
+input.form-control {
+    padding-left: 3px;
+}
+
+.last-row {
+    .form-group {
+        margin-bottom: 0;
+    }
+}

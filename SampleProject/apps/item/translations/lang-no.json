@@ -1,0 +1,11 @@
+﻿{
+    "BASE": {
+        "CREATED":  "Opprettet",
+        "CASE_NUMBER":  "Saksnummer",
+        "LAST_SAVED":  "Sist lagret",
+        "SAVE": "Lagre"
+    },
+    "PERSON": { 
+        "EDIT":  "Rediger person"
+    }
+}

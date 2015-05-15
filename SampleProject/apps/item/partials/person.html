@@ -1,0 +1,34 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">Person</div>
+    <div class="panel-body">
+        <div class="row ">
+            <div class="form-group col-xs-3">
+                <label>Name and SSN</label>
+                <span class="form-control">{{ctl.vm.name}} ({{ctl.vm.socialSecurityNumber}})</span>
+            </div>
+            <div class="form-group col-xs-3">
+                <label>Occupation</label>
+                <span class="form-control">{{ctl.vm.occupation}}</span>
+            </div>
+            <div class="form-group col-xs-3">
+                <label>Nationality</label>
+                <span class="form-control">{{ctl.vm.nationality.key}}</span>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="form-group col-xs-3">
+                <label>City and Country</label>
+                <span class="form-control">{{ctl.vm.city.key}}, {{ctl.vm.country.key}}</span>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="form-group col-md-12">
+                <label>Description</label>
+                <span class="form-control">{{ctl.vm.description}}</span>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <button class="btn btn-default pull-right" translate ng-click="ctl.open()">PERSON.EDIT</button>
+        </div>
+    </div>
+</div>
