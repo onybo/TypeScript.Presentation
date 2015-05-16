@@ -41,13 +41,185 @@
         <div class="slides">
             <section >
 
+<section >
+
 <h2>TypeScript</h2>
+
+<ul>
+<li>Tools</li>
+<li>Lock in?</li>
+<li>Type annotations</li>
+<li>TypeScript and Angular
+<ul>
+<li>fat arrows, generics</li>
+</ul></li>
+</ul>
+
+</section>
 
 </section>
 
 <section >
 
 <section >
+
+<h2>Tools</h2>
+
+<ul>
+<li>Web Essentials
+<ul>
+<li>Split screen</li>
+</ul></li>
+<li>IE or Chrome developer tools - F12</li>
+<li>Map Files</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>lock in?</h2>
+
+<ul>
+<li>classes/objects</li>
+<li>modules/namespaces</li>
+<li>interfaces</li>
+</ul>
+
+</section>
+
+<section >
+
+<h4>TypeScript class</h4>
+
+<table class="pre"><tr><td><pre lang="js"><span class="k">class</span> Car {
+  constructor(<span class="k">private</span> model,
+    <span class="k">private</span> year,
+    <span class="k">private</span> miles) {
+  }
+
+  <span class="k">public</span> toString() {
+    <span class="k">return</span> <span class="k">this</span>.model <span class="o">+</span> <span class="s">" has done "</span> <span class="o">+</span> <span class="k">this</span>.miles <span class="o">+</span> <span class="s">" miles"</span>;
+  }
+}</pre></td></tr></table>
+
+</section>
+
+<section >
+
+<img src="/images/JavaScript-Design-Patterns.jpg" alt="Alt text">
+
+</section>
+
+<section >
+
+<h4>Constructors With Prototypes</h4>
+
+<table class="pre"><tr><td><pre lang="js"><span class="k">function</span> Car( model, year, miles ) {
+
+  <span class="k">this</span>.model <span class="o">=</span> model;
+  <span class="k">this</span>.year <span class="o">=</span> year;
+  <span class="k">this</span>.miles <span class="o">=</span> miles;
+
+  Car.prototype.toString <span class="o">=</span> <span class="k">function</span> () {
+    <span class="k">return</span> <span class="k">this</span>.model <span class="o">+</span> <span class="s">" has done "</span> <span class="o">+</span> <span class="k">this</span>.miles <span class="o">+</span> <span class="s">" miles"</span>;
+  };
+}</pre></td></tr></table>
+
+<a style="font-size: 10px;" href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/">http://addyosmani.com/resources/essentialjsdesignpatterns/book/</a>
+
+</section>
+
+<section >
+
+<h4>Generated code</h4>
+
+<table class="pre"><tr><td><pre lang="js"><span class="k">var</span> Car <span class="o">=</span> (<span class="k">function</span> () {
+    <span class="k">function</span> Car(model, year, miles) {
+        <span class="k">this</span>.model <span class="o">=</span> model;
+        <span class="k">this</span>.year <span class="o">=</span> year;
+        <span class="k">this</span>.miles <span class="o">=</span> miles;
+    }
+    Car.prototype.toString <span class="o">=</span> <span class="k">function</span> () {
+        <span class="k">return</span> <span class="k">this</span>.model <span class="o">+</span> <span class="s">" has done "</span> <span class="o">+</span> <span class="k">this</span>.miles <span class="o">+</span> <span class="s">" miles"</span>;
+    };
+    <span class="k">return</span> Car;
+})();</pre></td></tr></table>
+
+</section>
+
+<section >
+
+<h4>TypeScript module</h4>
+
+<table class="pre"><tr><td><pre lang="js">module MyModule {
+    export <span class="k">var</span> foo <span class="o">=</span> <span class="s">"foo"</span>;
+    export <span class="k">function</span> bar() {
+        <span class="k">return</span> <span class="s">"bar"</span>;
+    }
+}</pre></td></tr></table>
+
+</section>
+
+<section >
+
+<h4>Namespacing fundamentals</h4>
+
+<h5>5. Immediately-invoked Function Expressions (IIFE)s</h5>
+
+<table class="pre"><tr><td><pre lang="js"><span class="k">var</span> MyModule <span class="o">=</span> MyModule <span class="o">|</span><span class="o">|</span> {};
+
+(<span class="k">function</span>( MyModule ){
+    MyModule.foo <span class="o">=</span> <span class="s">"foo"</span>;
+    MyModule.bar <span class="o">=</span> <span class="k">function</span>(){
+        <span class="k">return</span> <span class="s">"bar"</span>;
+    };
+})( MyModule );</pre></td></tr></table>
+
+<a style="font-size: 10px;" href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/">http://addyosmani.com/resources/essentialjsdesignpatterns/book/</a>
+
+</section>
+
+<section >
+
+<h4>TypeScript Generated code</h4>
+
+<table class="pre"><tr><td><pre lang="js"><span class="k">var</span> MyModule;
+(<span class="k">function</span> (MyModule) {
+    MyModule.foo <span class="o">=</span> <span class="s">"foo"</span>;
+    <span class="k">function</span> bar() {
+        <span class="k">return</span> <span class="s">"bar"</span>;
+    }   
+    MyModule.bar <span class="o">=</span> bar;
+})(MyModule <span class="o">|</span><span class="o">|</span> (MyModule <span class="o">=</span> {}));</pre></td></tr></table>
+
+<h4>TypeScript interfaces</h4>
+
+<table class="pre"><tr><td><pre lang="js"><span class="k">interface</span> ICar {
+    drive: () <span class="o">=</span><span class="o">&gt;</span> <span class="k">void</span>;
+    toString: () <span class="o">=</span><span class="o">&gt;</span> <span class="k">string</span>;
+    color: <span class="k">string</span>;
+};</pre></td></tr></table>
+
+</section>
+
+<section >
+
+<h4>TypeScript Generated code</h4>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h4>TypeScript features that</h4>
 
 <h3>Type annotations</h3>
 
@@ -74,8 +246,6 @@
 <section >
 
 <ul>
-<li>Tooling
-Web essentials, map files, chrome developer tools</li>
 <li>TypeScript type definitions
 DefinitelyTyped, *.d.ts files</li>
 <li>Selv om typescript har klasser, så er en ikke nødt til å bruke klasser overalt
