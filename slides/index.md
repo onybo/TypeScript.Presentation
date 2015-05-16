@@ -46,7 +46,7 @@
 
 ---
 
-<img src="/images/javaScript_design_patterns.jpg" alt="Alt text">
+<img src="images/javascript_design_patterns.jpg" alt="Alt text">
 
 ---
 
@@ -125,6 +125,8 @@
         }   
         MyModule.bar = bar;
     })(MyModule || (MyModule = {}));
+
+---
 
 #### TypeScript interfaces
 
