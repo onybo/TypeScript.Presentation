@@ -185,6 +185,7 @@
     }
 
 ---
-    EcmaScript 6.0
+
+#### EcmaScript 6.0
     
 http://kangax.github.io/compat-table/es6/
