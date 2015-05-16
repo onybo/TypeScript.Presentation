@@ -1,0 +1,27 @@
+TypeScript type definitions
+- DatePicker in ItemController.ts
+- interface first
+- scripts\typings\pikaday\pikaday.d.ts
+- http://definitelytyped.org/
+- DefinitelyTyped, *.d.ts files
+
+
+- Selv om typescript har klasser, så er en ikke nødt til å bruke klasser overalt
+demo på hvordan vi har laget noen av våre directives som Typescript functions (men vi har fortsatt alle de andre fordelene med Type 
+annotations, fat-arrow functions og generics.
+- BlinkDirective.ts i apps\item\app\BlinkDirective.ts
+
+- Bruk av Fat arrows I klasser og this reference
+- open/save i ItemController.ts constructor
+ 
+-          Generics for typesterke lister
+Demo med web-api metoder som returnerer lister av KeyValuePair<string, string> som vi konsumerer med
+ typete generics i TypeScript
+- se på web api implementasjon
+   - api\ListController.cs
+   -apps\item\app\PersonDialogController.ts 
+ 
+-          Angular controller as syntaksen kombinert med controller implementert som en TypeScript class gir veldig lesbar kode
+Ser på en eksempel implementasjon
+-          Angular 1.3 med TypeScript controllere kan minne veldig mye om Angular 2.0 components
+Se på 1.3 og 2.0 kode ved siden av hverandre for å se at det ikke er så store forskjeller som noen kanskje skal ha det til

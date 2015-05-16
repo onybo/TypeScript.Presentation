@@ -10,7 +10,7 @@ module Directives {
             restrict: 'E',
             transclude: true,
             scope: {},
-            controller: function ($scope, $element) {
+            controller: function ($scope, $element: JQuery) : void {
                 function showElement() {
                     $element.css("background-color", "red");
                     $timeout(hideElement, 500);
