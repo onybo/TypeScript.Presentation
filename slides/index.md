@@ -46,7 +46,7 @@
 
 ---
 
-<img src="/images/JavaScript-Design-Patterns.jpg" alt="Alt text">
+<img src="/images/javaScript_design_patterns.jpg" alt="Alt text">
 
 ---
 
@@ -161,6 +161,7 @@
 ***
 
 
+http://kangax.github.io/compat-table/es6/
 
 -          TypeScript type definitions
 DefinitelyTyped, *.d.ts files
