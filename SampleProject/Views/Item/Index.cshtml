@@ -7,11 +7,6 @@
         .constant('itemNumber', '@Model');
 </script>
 
-<script src="@Url.Content("~/apps/item/app/ItemController.js")" type="text/javascript"></script>
-<script src="@Url.Content("~/apps/item/app/PersonDialogController.js")" type="text/javascript"></script>
-<script src="@Url.Content("~/apps/item/app/BlinkDirective.js")" type="text/javascript"></script>
-
-
 <div ng-controller="ItemController as ctl">
     <div ng-include="'apps/item/partials/base.html'"></div>
 
@@ -19,3 +14,7 @@
 
     <div ng-include="'apps/item/partials/employer.html'"></div>
 </div>
+
+<script src="@Url.Content("~/apps/item/app/ItemController.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/apps/item/app/PersonDialogController.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/apps/item/app/BlinkDirective.js")" type="text/javascript"></script>

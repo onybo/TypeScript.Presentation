@@ -1,6 +1,15 @@
 ﻿/// <reference path="../../../scripts/typings/angularjs/angular.d.ts" />
 /// <reference path="../../../scripts/typings/moment/moment.d.ts" />
 
+//interface PikadayPicker {
+//    toString(format: string): string;
+//    getMoment(): any;
+//    setMoment(date, preventOnSelect: boolean): void;
+//    setMoment(date): void;
+//    getDate(): Date;
+//    setDate(date: Date): void;
+//}
+
 module Controllers {
     'use strict';
 
@@ -8,6 +17,7 @@ module Controllers {
         lastSaved: Date;
         displayLastSaved: () => string;
         created: any;
+        birthDate: Date;
     }
 
     export interface IKeyValuePair<TValue> {
@@ -21,6 +31,7 @@ module Controllers {
         open: () => void;
         save: () => void;
         dateFormat = 'DD.MM.YYYY';
+        birthDatePicker: any; //PikadayPicker;
 
         public static $inject = [
             '$scope',
@@ -29,6 +40,7 @@ module Controllers {
             '$log',            
             'itemNumber',
             '$modal',
+            '$timeout',
             'HotkeysService'
         ];
 
@@ -38,10 +50,12 @@ module Controllers {
             private $window: ng.IWindowService,
             private $log,
             private itemNumber: string,
-            private $modal) {
+            private $modal,
+            private $timeout: ng.ITimeoutService) {
 
             this.vm = $resource('/api/item/' + itemNumber).get(null, () => {   
-                this.vm.created = moment(this.vm.created).format(this.dateFormat);             
+                this.vm.created = moment(this.vm.created).format(this.dateFormat);  
+                $timeout(() => this.birthDatePicker.setDate(this.vm.birthDate), 1);
             });
 
             this.getLastSaved = () => moment(this.vm.lastSaved).format(this.dateFormat);

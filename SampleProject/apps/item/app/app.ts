@@ -8,7 +8,8 @@ module MainApp {
             'ngResource',
             'ui.bootstrap',
             'pascalprecht.translate',
-            'cfp.hotkeys'
+            'cfp.hotkeys',
+            'pikaday'
         ])
         .config([
             "$translateProvider",

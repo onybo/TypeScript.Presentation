@@ -248,6 +248,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="apps\item\app\app.ts" />
     <TypeScriptCompile Include="apps\item\app\BlinkDirective.ts" />
+    <TypeScriptCompile Include="apps\item\app\Car.ts" />
     <TypeScriptCompile Include="apps\item\app\PersonDialogController.ts" />
     <TypeScriptCompile Include="apps\item\app\ItemController.ts" />
     <TypeScriptCompile Include="Scripts\services\HotkeysService.ts" />
@@ -266,6 +267,7 @@
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\lodash\lodash.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\moment\moment.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\pikaday\pikaday.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bower.json" />
@@ -366,6 +368,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
+    <Content Include="Content\pikaday.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

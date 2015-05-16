@@ -15,6 +15,7 @@ namespace Web.Services
                 LastSaved = DateTime.Now,
                 Created = DateTime.Now.AddDays(-2),
                 Name = "Ole Olsen",
+                BirthDate = new DateTime(1970, 4, 8),
                 SocialSecurityNumber = "0408702345",
                 Occupation = "Developer",
                 Nationality = new KeyValuePair<string, string>("Norway", "045"),

@@ -17,5 +17,6 @@ namespace Web.Models
         public string Description { get; set; }
         public string EmployerName { get; set; }
         public string EmployerAddress { get; set; }
+        public DateTime BirthDate { get; set; }
     }
 }

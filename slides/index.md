@@ -7,11 +7,141 @@
 ***
 
 ## TypeScript
+- Tools
+- Lock in?
+- Type annotations 
+- TypeScript and Angular
+    - fat arrows, generics
+ 
+***
+
+## Tools
+- Web Essentials
+    - Split screen
+- IE or Chrome developer tools - F12
+- Map Files
+
+***
+## lock in?
+- classes/objects
+- modules/namespaces
+- interfaces
+
+---
+
+#### TypeScript class
+
+    [lang=js]
+    class Car {
+      constructor(private model,
+        private year,
+        private miles) {
+      }
+
+      public toString() {
+        return this.model + " has done " + this.miles + " miles";
+      }
+    }
 
 
+---
+
+<img src="/images/JavaScript-Design-Patterns.jpg" alt="Alt text">
+
+---
+
+#### Constructors With Prototypes
+
+    [lang=js]
+    function Car( model, year, miles ) {
+
+      this.model = model;
+      this.year = year;
+      this.miles = miles;
+
+      Car.prototype.toString = function () {
+        return this.model + " has done " + this.miles + " miles";
+      };
+    }
+    
+<a style="font-size: 10px;" href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/">http://addyosmani.com/resources/essentialjsdesignpatterns/book/</a>
+
+---
+
+#### Generated code
+
+    [lang=js]
+    var Car = (function () {
+        function Car(model, year, miles) {
+            this.model = model;
+            this.year = year;
+            this.miles = miles;
+        }
+        Car.prototype.toString = function () {
+            return this.model + " has done " + this.miles + " miles";
+        };
+        return Car;
+    })();
+
+---
+
+#### TypeScript module
+
+    [lang=js]
+    module MyModule {
+        export var foo = "foo";
+        export function bar() {
+            return "bar";
+        }
+    }
+
+---
+
+#### Namespacing fundamentals
+##### 5. Immediately-invoked Function Expressions (IIFE)s
+
+    [lang=js]
+    var MyModule = MyModule || {};
+
+    (function( MyModule ){
+        MyModule.foo = "foo";
+        MyModule.bar = function(){
+            return "bar";
+        };
+    })( MyModule );
+
+<a style="font-size: 10px;" href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/">http://addyosmani.com/resources/essentialjsdesignpatterns/book/</a>
+
+---
+
+#### TypeScript Generated code
+
+    [lang=js]
+    var MyModule;
+    (function (MyModule) {
+        MyModule.foo = "foo";
+        function bar() {
+            return "bar";
+        }   
+        MyModule.bar = bar;
+    })(MyModule || (MyModule = {}));
+
+#### TypeScript interfaces
+
+    [lang=js]
+    interface ICar {
+        drive: () => void;
+        toString: () => string;
+        color: string;
+    };
+
+---    
+
+#### TypeScript Generated code
 
 ***
 
+#### TypeScript features that 
 ### Type annotations
 
 ---
@@ -22,17 +152,16 @@
 
 ---
 
-
     [lang=js]
     function add(left: number, right: number): number {
 	  return left + right;
     }
 
+
 ***
 
 
--          Tooling
-Web essentials, map files, chrome developer tools
+
 -          TypeScript type definitions
 DefinitelyTyped, *.d.ts files
 -          Selv om typescript har klasser, så er en ikke nødt til å bruke klasser overalt

@@ -1,11 +1,19 @@
 ﻿/// <reference path="../../../scripts/typings/angularjs/angular.d.ts" />
 /// <reference path="../../../scripts/typings/moment/moment.d.ts" />
+//interface PikadayPicker {
+//    toString(format: string): string;
+//    getMoment(): any;
+//    setMoment(date, preventOnSelect: boolean): void;
+//    setMoment(date): void;
+//    getDate(): Date;
+//    setDate(date: Date): void;
+//}
 var Controllers;
 (function (Controllers) {
     'use strict';
 
     var ItemController = (function () {
-        function ItemController($scope, $resource, $window, $log, itemNumber, $modal) {
+        function ItemController($scope, $resource, $window, $log, itemNumber, $modal, $timeout) {
             var _this = this;
             this.$scope = $scope;
             this.$resource = $resource;
@@ -13,9 +21,13 @@ var Controllers;
             this.$log = $log;
             this.itemNumber = itemNumber;
             this.$modal = $modal;
+            this.$timeout = $timeout;
             this.dateFormat = 'DD.MM.YYYY';
             this.vm = $resource('/api/item/' + itemNumber).get(null, function () {
                 _this.vm.created = moment(_this.vm.created).format(_this.dateFormat);
+                $timeout(function () {
+                    return _this.birthDatePicker.setDate(_this.vm.birthDate);
+                }, 1);
             });
 
             this.getLastSaved = function () {
@@ -61,6 +73,7 @@ var Controllers;
             '$log',
             'itemNumber',
             '$modal',
+            '$timeout',
             'HotkeysService'
         ];
         return ItemController;

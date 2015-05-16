@@ -21,6 +21,10 @@
                 <label>City and Country</label>
                 <span class="form-control">{{ctl.vm.city.key}}, {{ctl.vm.country.key}}</span>
             </div>
+            <div class="form-group col-xs-3">
+                <label>Date of birth</label>
+                <input type="text" readonly pikaday="ctl.birthDatePicker" ng-model="ctl.birthDateText" format="DD.MM.YYYY" class="form-control" />
+            </div>
         </div>
         <div class="row ">
             <div class="form-group col-md-12">
